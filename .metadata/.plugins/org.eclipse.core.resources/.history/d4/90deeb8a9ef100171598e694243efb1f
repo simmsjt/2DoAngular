@@ -1,0 +1,10 @@
+package entities;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Todo {
+	@Id
+	@GeneratedValue(strategy = GenerationType=IDENTIY)
+	int id;
+}
