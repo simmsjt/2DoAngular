@@ -1,0 +1,9 @@
+angular.module('appModule')
+.filter('incomplete',function(){
+	return function(){
+		var results = [];
+		
+		return results
+	}
+	
+})

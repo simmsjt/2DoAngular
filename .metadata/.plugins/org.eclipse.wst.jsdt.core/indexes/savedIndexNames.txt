@@ -1,0 +1,6 @@
+INDEX VERSION 1.4+/Users/simmsjt/SD/angularTodo/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+476142178.index
+2231857208.index
+944298589.index
+984363091.index
+4152914063.index

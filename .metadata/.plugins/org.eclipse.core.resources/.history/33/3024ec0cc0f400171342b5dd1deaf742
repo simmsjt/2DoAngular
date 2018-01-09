@@ -1,0 +1,39 @@
+<h3>One to-do to rule them all.</h3>
+<h4> There are currently {{ vm.getNumTodos()}} things to do.</h4>
+
+<div ng-show="vm.selected">
+	<form>
+	    <input type="text" placeholder="Task" ng-model="vm.copy.task" value="{{vm.copy.task}}"></input>
+	    <input type="text" placeholder="Description" ng-model="vm.copy.description" value="{{vm.copy.description}}"></input>
+	    <input type="checkbox" ng-model="vm.copy.completed"/>
+	    <input type="submit" ng-click="vm.submitEdit()" value="Save"></input>	
+	    <input type="submit" ng-click="vm.resetEdit()" value="Reset"></input>	
+	    <input type="submit" ng-click="vm.displayTable()" value="Go back"></input>	    
+    </form>
+</div>
+
+<table ng-hide="vm.selected">
+  <tr>
+    <th>--Task--</th>
+    <th>----Description----</th>
+    <th>-Mark-</th>
+    <th>--Complete?--</th>
+    <th>--Delete--</th>
+  </tr>
+  <tr>
+ 	<form>
+  		<td><input type="text" placeholder="Task" ng-model="task.task" /></td>
+  		<td><input type="text" placeholder="Description" ng-model="task.description"/></td>
+  		<td></td>
+  		<td><input type="submit" value="Add Item" ng-click="vm.addTodo(task); task = {};"/></td>
+		<td></td>
+	</form>
+  </tr>
+  <tr ng-repeat="num in vm.todos">
+    <td ng-click = "vm.displayTodo(num)">{{num.task}}</td>
+    <td ng-click = "vm.displayTodo(num)">{{num.description}}</td>
+    <td  class="mark"><input type="checkbox" ng-change="vm.updateTodo(num)" ng-model="num.completed"/></td>
+    <td>{{num.completed}}</td>
+    <td ng-click = "vm.destroy(num.id)"> Delete </td>
+  </tr>
+</table>

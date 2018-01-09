@@ -24,3 +24,22 @@ th{
 .mark{
 	text-align: center;
 }
+
+.greyedOut{
+	color: grey;
+	text-decoration: line-through;
+}
+
+.background-black{
+	background-color:black;	
+}
+
+.red {
+  color: red;
+}
+.yellow {
+  color: yellow;
+}
+.green {
+  color: green;
+}

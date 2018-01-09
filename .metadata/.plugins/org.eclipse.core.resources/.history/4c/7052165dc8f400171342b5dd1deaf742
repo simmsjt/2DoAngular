@@ -1,0 +1,15 @@
+ angular.module('appModule')
+.component('backlog', {
+  templateUrl : 'app/appModule/todoList/backlog.component.html',
+  controller : function() {
+    var vm =this;
+
+    vm.criticalityLevel = 7;
+
+    vm.go = function() {
+      if (vm.criticalityLevel > 10) return 'danger';
+      if (vm.criticalityLevel > 5) return 'warning';
+      return 'safe';
+    }
+  }
+})

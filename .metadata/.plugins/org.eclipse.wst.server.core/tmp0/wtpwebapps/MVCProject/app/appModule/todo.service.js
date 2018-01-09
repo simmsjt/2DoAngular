@@ -1,58 +1,54 @@
 angular.module('appModule')
-.factory('todoService',function(){
+.factory('todoService',function($http, $filter){
 	var service = {};
-	var tasks = [
-		  {
-			  id : 1,
-		      task : 'Call mom',
-		      description : 'She is old and lonely.',
-		      completed : false
-		  },
-		  {
-			  id : 2,
-		      task : 'Buy bananas',
-		      description : 'Got to keep potassium up.',
-		      completed : false
-		  },
-		  {
-			  id : 3,
-		      task : 'Go for a run',
-		      description : 'Ate to many donuts during christmas.',
-		      completed : false
-		  }
-	  ];
 	
 	service.index = function(){
-		return tasks;
+		return $http({
+		      method : 'GET',
+		      url : 'rest/user/1/todo'
+		    })
 	};
 	
 	service.create = function(task){
-		task.id = generateId();
 		task.completed = false; 
-		tasks.push(task);
+		return $http({
+			method: 'POST',
+			url : 'rest/user/1/todo',
+			headers : {
+			    'Content-Type' : 'application/json'
+			  },
+			data : task
+		})
 	};
 	
-	var generateId = function() {
-    	  return tasks[tasks.length-1].id + 1;
-    };
+	service.destroy = function(id){
+		return $http({
+			method: 'DELETE',
+			url : 'rest/user/1/todo/' + id
+		})
+	};
       
     service.getNumTasks = function() {
         return tasks.length;
     };
-    
+
     service.update = function(task){
-    			var obj = tasks.find(x => x.id === task.id );
-			obj.task = task.task;
-			obj.description = task.description;
-			obj.completed = task.completed;
-    };
-   
-    service.destroy = function(task){
-	    	tasks.forEach(function(element, index) {
-	    	    if(element.id===task.id){
-	    	    		tasks.splice(index,1);
-	    	    }
-	    	});
+    		if(task.completed == true){
+    			task.complete_date = $filter('date')(Date.now(), 'MM/dd/yyyy');
+    			console.log(task.complete_date);
+    		} else {
+    			task.complete_date = "";
+    			console.log(task.complete_date);
+    		}
+    		return $http({
+    			method: 'PUT',
+    			url: 'rest/user/1/todo/' + task.id,
+    			headers : {
+    			    'Content-Type' : 'application/json'
+    			  },
+    			data : task
+    		})
+    	
     };
     
 

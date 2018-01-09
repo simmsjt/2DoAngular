@@ -1,0 +1,41 @@
+angular.module('appModule')
+.factory('todoService',function(){
+	var service = {};
+	var url = 'http://localhost:8080/MVCProject/rest/user/';
+	
+	service.index = function(uid){
+		return $http({
+		      method : 'GET',
+		      url : 'http://localhost:8080/MVCProject/rest/user//todo'
+		    })
+	};
+	
+	service.create = function(task){
+		task.id = generateId();
+		task.completed = false; 
+		tasks.push(task);
+	};
+	
+      
+    service.getNumTasks = function() {
+        return tasks.length;
+    };
+    
+    service.update = function(task){
+    			var obj = tasks.find(x => x.id === task.id );
+			obj.task = task.task;
+			obj.description = task.description;
+			obj.completed = task.completed;
+    };
+   
+    service.destroy = function(task){
+	    	tasks.forEach(function(element, index) {
+	    	    if(element.id===task.id){
+	    	    		tasks.splice(index,1);
+	    	    }
+	    	});
+    };
+    
+
+	return service;
+})

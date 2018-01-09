@@ -12,12 +12,10 @@ import org.junit.Test;
 
 public class SmokeTest {
 
-	private EntityManagerFactory emf = null
+	private EntityManagerFactory emf = null;
 	private EntityManager em = null;
 	@Before
 	public void set_up() {
-		emf = PersistenceContext
-		
 	}
 	
 	@After

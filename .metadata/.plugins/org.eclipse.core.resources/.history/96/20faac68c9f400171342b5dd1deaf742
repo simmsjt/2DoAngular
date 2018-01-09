@@ -1,0 +1,1 @@
+<h3 ng-click="vm.go()">{{vm.x}}</h3>

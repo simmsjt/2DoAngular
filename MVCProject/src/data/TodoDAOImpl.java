@@ -75,15 +75,24 @@ public class TodoDAOImpl implements TodoDAO {
 
 	@Override
 	public Boolean destroy(int uid, int tid) {
-		Todo todo = em.find(Todo.class, tid);
-		if(todo == null) {
-			return null;
-		}
-		em.remove(todo);
+//		Todo todo = em.find(Todo.class, tid);
+//		if(todo == null) {
+//			return null;
+//		}
+//		em.remove(todo);
+//		
+//		if(em.find(Todo.class, tid)==null) {
+//			return true;
+//		}
+//		return false;
+//		
+		String query = "DELETE FROM Todo t WHERE t.id = :tid";
+		int updates  = em.createQuery(query).setParameter("tid", tid).executeUpdate();
 		
-		if(em.find(Todo.class, tid)==null) {
+		if(updates > 0) {
 			return true;
 		}
+		
 		return false;
 	}
 

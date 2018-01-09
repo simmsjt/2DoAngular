@@ -1,0 +1,9 @@
+angular.module('appModule')
+.filter('incomplete',function(){
+	return function(todos){
+		var results = [];
+		todos.forEach(
+		return results;
+	}
+	
+})

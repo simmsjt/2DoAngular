@@ -1,0 +1,16 @@
+angular.module('appModule')
+.filter('incomplete',function(){
+	return function(todos){
+		var results = [];
+		todos.forEach(function(todo, showCompleted){
+			if(showCompleted === true){
+				return todos;
+			}
+			
+			if(todo.completed === false)
+				results.push(todo);
+		});
+		return results;
+	}
+	
+})

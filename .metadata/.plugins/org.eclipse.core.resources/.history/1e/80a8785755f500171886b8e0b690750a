@@ -1,0 +1,7 @@
+angular.module('appModule',[]);
+
+
+angular.module('appModule', ['ngRoute'])
+.config(function($routeProvider){
+  // Route configurations...
+});

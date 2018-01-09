@@ -1,0 +1,10 @@
+angular.module('appModule')
+  .component('contact', {
+	  templateUrl : 'app/appModule/pages/contact.component.html',
+	  controller: function(){
+		  var vm = this;
+		 
+	  },
+	  controllerAs: 'vm'
+  })
+  

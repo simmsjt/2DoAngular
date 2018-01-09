@@ -1,0 +1,11 @@
+ngular.module('appModule')
+  .component('todoList', {
+	  templateUrl : 'app/appModule/todoList/todoList.component.html',
+	  controller: function(){
+		  var vm = this;
+		 
+	  },
+	  controllerAs: 'vm'
+  })
+  
+  
