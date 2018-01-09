@@ -1,0 +1,40 @@
+package controllers;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+import entities.User;
+
+public class AuthDAOImpl implements AuthDAO {
+
+	@PersistenceContext
+	private EntityManager em;
+	  
+	@Autowired
+	private PasswordEncoder encoder;
+	
+	@Override
+	public User register(User u) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User login(User u) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	 @Override
+	  public User register(User u) {
+	    String passwordSha = encoder.encode(u.getPassword());
+	    u.setPassword(passwordSha);
+	    em.persist(u);
+	    em.flush();
+	    return u;
+	  }
+
+}

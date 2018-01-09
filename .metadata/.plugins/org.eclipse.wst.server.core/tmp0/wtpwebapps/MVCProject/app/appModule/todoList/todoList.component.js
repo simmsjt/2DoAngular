@@ -19,16 +19,16 @@ angular.module('appModule')
 			  });
 		  }
 		  
-		  if (!vm.selected  && parseInt($routeParams.id)) {
-			  console.log(vm.todos);
-			  vm.todos.forEach(function(element){
-				  if(element.id=== parseInt($routeParams.id))
-					  console.log(element);
-					  vm.selected = element;
-			  });
-			  console.log(vm.selected);
-		  }
-		  
+//		  if (!vm.selected  && parseInt($routeParams.id)) {
+//			  console.log(vm.todos);
+//			  vm.todos.forEach(function(element){
+//				  if(element.id=== parseInt($routeParams.id))
+//					  console.log(element);
+//					  vm.selected = element;
+//			  });
+//			  console.log(vm.selected);
+//		  }
+//		  
 		  
 		  vm.greyedOut = function(isCompleted){
 			  if(isCompleted== true)
