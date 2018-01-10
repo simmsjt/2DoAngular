@@ -27,5 +27,32 @@ angular.module('authModule')
 	 .catch(console.error)
 	}
 	
+	service.login = function(user){
+		return $http({
+		     method : 'POST',
+		     url : 'rest/auth/login',
+		     headers :  {
+		         'Content-Type' : 'application/json'
+		     },
+		     data : user
+		 })
+		 .then(function(response) {
+		     saveToke(response.data)
+		 })
+		 .catch(console.error)
+	}
+	
+	service.logout = function(user){
+		return $http({
+		     method : 'POST',
+		     url : 'rest/auth/logout',
+		     headers :  {
+		         'Content-Type' : 'application/json'
+		     }
+		 })
+	}
+	
+	
+	
 	return service;
 })

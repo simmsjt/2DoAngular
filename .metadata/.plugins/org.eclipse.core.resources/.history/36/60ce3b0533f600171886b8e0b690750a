@@ -45,11 +45,16 @@ angular.module('authModule')
 	service.logout = function(user){
 		return $http({
 		     method : 'POST',
-		     url : 'rest/auth/logout',
+		     url : 'rest/auth/login',
 		     headers :  {
 		         'Content-Type' : 'application/json'
-		     }
+		     },
+		     data : user
 		 })
+		 .then(function(response) {
+		     saveToke(response.data)
+		 })
+		 .catch(console.error)
 	}
 	
 	
