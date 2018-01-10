@@ -1,9 +1,0 @@
-127.0.0.1 - - [06/Jan/2018:19:12:01 -0700] "GET / HTTP/1.1" 404 994
-0:0:0:0:0:0:0:1 - - [06/Jan/2018:19:12:02 -0700] "GET /MVCProject/ HTTP/1.1" 200 531
-0:0:0:0:0:0:0:1 - - [06/Jan/2018:19:12:02 -0700] "GET /MVCProject/app/appModule/app.module.js HTTP/1.1" 304 -
-0:0:0:0:0:0:0:1 - - [06/Jan/2018:19:12:02 -0700] "GET /MVCProject/app/appModule/todo.service.js HTTP/1.1" 304 -
-0:0:0:0:0:0:0:1 - - [06/Jan/2018:19:12:02 -0700] "GET /MVCProject/css/app.css HTTP/1.1" 304 -
-0:0:0:0:0:0:0:1 - - [06/Jan/2018:19:12:02 -0700] "GET /MVCProject/app/appModule/todoList/todoList.component.js HTTP/1.1" 200 1739
-0:0:0:0:0:0:0:1 - - [06/Jan/2018:19:12:02 -0700] "GET /MVCProject/app/appModule/todoList/todoList.component.html HTTP/1.1" 200 1534
-0:0:0:0:0:0:0:1 - - [06/Jan/2018:19:13:11 -0700] "POST /MVCProject/rest/user/1/todo HTTP/1.1" 405 -
-0:0:0:0:0:0:0:1 - - [06/Jan/2018:19:13:11 -0700] "GET /MVCProject/rest/user/1/todo HTTP/1.1" 500 -

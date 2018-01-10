@@ -1,8 +1,0 @@
-angular.module('authModule')
-.component('register',{
-	templateUrl : 'app/authModule/register.component.html',
-	controllerAs: 'vm',
-	controller : function(){
-		var vm = this;
-	}
-})
