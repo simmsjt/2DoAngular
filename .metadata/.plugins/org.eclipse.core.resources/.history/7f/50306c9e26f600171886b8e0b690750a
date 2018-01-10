@@ -1,0 +1,18 @@
+angular.module('authModule')
+.factory('authService', function($http, $cookies, $location){
+	var service = {};
+	
+	
+	service.register = function(user){
+		return $http({
+			method:'POST',
+			url: 'rest/auth/register',
+			headers ; {
+				'Content-Type' : 'application/json'
+			},
+			data : user
+		})
+	}
+	
+	return service;
+})

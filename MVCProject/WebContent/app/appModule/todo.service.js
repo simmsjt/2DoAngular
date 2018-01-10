@@ -1,13 +1,18 @@
 angular.module('appModule')
-.factory('todoService',function($http, $filter){
+.factory('todoService',function($http, $filter, authService, $location){
 	var service = {};
 	
-	service.index = function(){
-		return $http({
-		      method : 'GET',
-		      url : 'rest/user/1/todo'
-		    })
-	};
+	service.index = function() {
+        var user = authService.getToken();
+        if (!user.id) {
+            $location.path('/login')
+            return;
+        }
+        return $http({
+            method : 'GET',
+            url : 'rest/user/' + user.id + '/todo'
+        });
+    }
 	
 	service.create = function(task){
 		task.completed = false; 

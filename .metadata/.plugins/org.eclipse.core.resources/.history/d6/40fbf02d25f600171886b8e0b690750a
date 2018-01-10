@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="appModule">
+  <head>
+    <meta charset="utf-8">
+    <title>Todo</title>
+    <!-- Angular stuff -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-route.min.js"></script>
+	<!-- Auth Module Stuff -->
+	<script src="app/authModule/auth.module.js"></script>
+	<!-- App Module Stuff -->
+    <script src="app/appModule/app.module.js"></script>
+    <script src="app/appModule/todoList/todoList.component.js"></script>
+    <script src="app/appModule/todo.service.js"></script>    
+    <script src="app/appModule/filters/incomplete.filter.js"></script>    
+    <script src="app/appModule/todoList/backlog.component.js"></script>   
+    <script src="app/appModule/about/about.component.js"></script>   
+    <script src="app/appModule/home/home.component.js"></script>   
+    <script src="app/appModule/contact/contact.component.js"></script>  
+    <script src="app/appModule/nav/navbar.component.js"></script>  
+    <script src="app/appModule/error/notFound.component.js"></script>  
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    </head>
+  <body>
+  	<navbar>Navbar loading....</navbar>
+    <div ng-view>
+    </div>
+  </body>
+</html>

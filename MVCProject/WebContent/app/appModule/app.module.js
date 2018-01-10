@@ -1,7 +1,4 @@
-angular.module('appModule',[]);
-
-
-angular.module('appModule', ['ngRoute'])
+angular.module('appModule', ['ngRoute', 'authModule'])
 .config(function($routeProvider){
 	$routeProvider
     .when('/', {
@@ -12,6 +9,9 @@ angular.module('appModule', ['ngRoute'])
     })
     .when('/about', {
       template : '<about></about>'
+    })
+    .when('/register', {
+      template : '<register>loading...</register>'
     })
     .when('/todo', {
       template : '<todo-list></todo-list>'
