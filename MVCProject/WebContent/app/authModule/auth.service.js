@@ -8,6 +8,10 @@ angular.module('authModule')
 		return user;
 	}
 	
+	var removeToken = function() {
+	     $cookies.removie('uid');
+	 }
+	
 	var saveToken = function(user) {
         $cookies.put('uid', user.id);
 	}
@@ -22,7 +26,8 @@ angular.module('authModule')
 	     data : user
 	 })
 	 .then(function(response) {
-	     saveToke(response.data)
+	     saveToken(response.data);
+	     $location.path('/todo');
 	 })
 	 .catch(console.error)
 	}
@@ -37,7 +42,8 @@ angular.module('authModule')
 		     data : user
 		 })
 		 .then(function(response) {
-		     saveToke(response.data)
+		     saveToken(response.data);
+		     $location.path('/todo');
 		 })
 		 .catch(console.error)
 	}

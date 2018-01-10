@@ -13,6 +13,9 @@ angular.module('appModule', ['ngRoute', 'authModule'])
     .when('/register', {
       template : '<register>loading...</register>'
     })
+    .when('/login', {
+      template : '<login></login>'
+    })
     .when('/todo', {
       template : '<todo-list></todo-list>'
     })
